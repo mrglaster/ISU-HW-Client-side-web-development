@@ -11,14 +11,14 @@ const SELECTOR_MONTHS_ID = 'mySelect';
 const P_ID = "myP"
 
 //Processing function
-function process(){
+function process() {
     const input = document.getElementById(INPUT_ID);
-    const select  = document.getElementById(SELECTOR_MONTHS_ID);
-    const day = +input.value  
+    const select = document.getElementById(SELECTOR_MONTHS_ID);
+    const day = +input.value
     const month = +select.value
-    const max = new Date(new Date().getFullYear(), month + 1, 0 ).getDate();
+    const max = new Date(new Date().getFullYear(), month + 1, 0).getDate();
     console.log(max);
-    if(isNaN(day) || day > max) {
+    if (isNaN(day) || day > max) {
         input.classList.add('error');
         input.classList.remove('success');
         return
@@ -30,22 +30,22 @@ function process(){
     const now = new Date();
 
     let isSameYear = month === now.getMonth() ? day > now.getDate() : month > now.getMonth();
-    
-    const year =  isSameYear ? now.getFullYear() : now.getFullYear() + 1;
-    const distdate = new Date (year, month, day);
+
+    const year = isSameYear ? now.getFullYear() : now.getFullYear() + 1;
+    const distdate = new Date(year, month, day);
 
     const seconds = parseInt((distdate - now) / 1000);
     const minutes = parseInt(seconds / 60);
     const hours = parseInt(minutes / 60);
-    const days = parseInt(hours/24);
-    console.log(days, hours % 24, minutes % 60 , seconds % 60);
+    const days = parseInt(hours / 24);
+    console.log(days, hours % 24, minutes % 60, seconds % 60);
     document.getElementById(P_ID).innerHTML = `Rest days to event: <b>${days}d</b>, ${hours % 24}h, ${minutes % 60}m, ${seconds % 60}s   `
 }
 
 
 //Function creating a text field
-function create_input(){
-    
+function create_input() {
+
     //Create text field somewhere in the memory 
     const input = document.createElement('input');
     input.id = INPUT_ID;
@@ -60,7 +60,7 @@ function create_input(){
 
 
 //Function creating months filled drop-down list
-function create_select(){
+function create_select() {
     const select = document.createElement('select');
     select.id = SELECTOR_MONTHS_ID;
 
@@ -71,24 +71,26 @@ function create_select(){
     const date = new Date();
 
     //Fill drop-down list with months's names    
-    for(let i=0; i<12; i++){
+    for (let i = 0; i < 12; i++) {
         option = document.createElement('option');
         option.value = i;
         date.setMonth(i);
-        option.text = date.toLocaleString('en-US', {month: 'long'});
+        option.text = date.toLocaleString('en-US', {
+            month: 'long'
+        });
         select.appendChild(option);
     }
     select.value = new Date().getMonth();
-    
+
 }
 
-function create_p(){
+function create_p() {
     const p = document.createElement('p');
     p.id = P_ID;
     document.body.appendChild(p);
 }
 
-function main(){
+function main() {
     create_input();
     create_select();
     create_p();
