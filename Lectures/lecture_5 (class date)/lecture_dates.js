@@ -1,7 +1,5 @@
-
-
 /* Basic Date class methods */
-function test_date(){
+function test_date() {
     const date = new Date();
     console.log(date); // Date
     console.log(date.getFullYear()); // Get full year
@@ -19,7 +17,7 @@ function test_date(){
 
 
 /* Experiments with some dates functions*/
-function date_parser(){
+function date_parser() {
     const newDate = Date.parse('2022-09-02'); // from String to ms amount
     console.log(newDate);
     console.log(Date(newDate)); // Parse ms amount as the date
@@ -28,6 +26,3 @@ function date_parser(){
 
     console.log(new Date('2022', '1', '33')) // The 5th of march'll be logged 
 }
-
-
-
