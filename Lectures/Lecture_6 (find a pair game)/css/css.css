@@ -1,0 +1,17 @@
+ .grid {
+   display: flex;
+   flex-wrap: wrap;
+   width: 500px;
+}
+
+
+.grid > .checked {
+    opacity: .15;
+}
+            
+.grid > img {
+     width: 100px;
+     height: 100px;
+     border: 2px solid #2b2b2b;
+     margin: 8px;            
+}
