@@ -1,0 +1,31 @@
+table {
+     border-collapse: collapse;
+     font-family: Calibri;
+     font-size: 14pt;
+     
+}
+
+td, th {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: center;
+}
+th{
+    font-weight: bold;
+    background-color: #E6E6E6;
+}
+
+.header{
+    background-color: orange;
+}
+
+.diagonal-empty{
+    color: green;
+    background-color: green;
+}
+
+.table-header-first{
+    background-color: cyan;
+    border-radius: 8px;
+}
